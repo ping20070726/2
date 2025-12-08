@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>疯狂动物城角色展示</title>
+<style type="text/css">
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .return-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #4e54c8;
+        color: white;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .return-btn:hover {
+        background: #2a2e8a;
+        transform: translateY(-3px);
+        box-shadow: 0 7px 15px rgba(0,0,0,0.2);
+    }
+    .character-list {
+        list-style: none;
+    }
+    .character {
+        display: flex;
+        margin-bottom: 40px;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .character:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+    /* 奇数项：图片在左，文本在右 */
+    .character:nth-child(odd) .character-img {
+        order: 1;
+    }
+    .character:nth-child(odd) .character-text {
+        order: 2;
+        padding: 30px 40px 30px 30px;
+    }
+    /* 偶数项：图片在右，文本在左 */
+    .character:nth-child(even) .character-img {
+        order: 2;
+    }
+    .character:nth-child(even) .character-text {
+        order: 1;
+        padding: 30px 30px 30px 40px;
+    }
+    .character-img {
+        flex: 0 0 40%;
+        min-height: 300px;
+        overflow: hidden;
+    }
+    .character-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .character:hover .character-img img {
+        transform: scale(1.05);
+    }
+    .character-text {
+        flex: 0 0 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .character-text h1 {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    .character-text h1:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #4e54c8, #8f94fb);
+        border-radius: 2px;
+    }
+    .character-text p {
+        font-size: 1.2rem;
+        color: #34495e;
+        margin-top: 15px;
+        line-height: 1.8;
+    }
+    .character-info {
+        background: #f8f9ff;
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    .character-info li {
+        margin-bottom: 8px;
+        color: #4a5568;
+    }
+    .footer {
+        text-align: center;
+        margin-top: 50px;
+        color: #7f8c8d;
+        font-size: 0.9rem;
+    }
+ 
+    /* 响应式设计 */
+	.navbar { 
+            background-color: rgba(34, 34, 34, 0.9); /* 半透明深灰背景 */ 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+            position: sticky;
+            top: 0; 
+            z-index: 100; /* 确保导航栏在最上层 */ 
+        } 
+	.navbar-container { 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        } 
+       .navbar ul { 
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* 导航项之间的间距 */ 
+        } 
+        .navbar li a { 
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease; /* 动画过渡 */ 
+        } 
+        .navbar li a:hover { 
+            background-color: #007bff; /*  hover时变蓝 */ 
+            transform: translateY(-2px); /* 轻微上移，增加层次感 */ 
+        } 
+        .navbar li a.active  { 
+            background-color: #007bff; /* 当前页面的导航项高亮 */ 
+        } 
+    
+</style>
+</head>
+ 
+<body>
+    <nav class="navbar"> 
+        <div class="navbar-container"> 
+            <ul>
+                <li><a href="../index.html"> 首页</a></li>
+                <li><a href="qjgk.html" >情节概况</a></li>
+                <li><a href="jsjs.html" class="active"> 角色介绍</a></li>
+                <li><a href="zctd.html"> 主创团队</a></li>
+				<li><a href="ztjx.html"> 主题解析</a></li>
+            
+            </ul>
+        </div>
+    </nav>
+    
+    <ul class="character-list">
+        <!-- 朱迪 -->
+        <li class="character">
+            <div class="character-img">
+                <img src="../image/20200915010948_d5c38.jpeg"  alt="朱迪警官">
+            </div>
+            <div class="character-text">
+                <h1>朱迪·霍普斯</h1>
+                <p>动物城警察局第一位兔子警官，充满理想主义的乐观主义者。尽管面临体型劣势和偏见，她凭借智慧和毅力证明小动物也能成就大事。</p>
+                <div class="character-info">
+                    <ul>
+                        <li><strong>物种</strong>: 棉尾兔</li>
+                        <li><strong>格言</strong>: "在动物城，任何人都能成就任何事！"</li>
+                        <li><strong>特点</strong>: 行动敏捷、正义感强、随身携带胡萝卜录音笔</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        
+        <!-- 尼克 -->
+        <li class="character">
+            <div class="character-img">
+                <img src="../image/20200915010949_429b8.jpeg"  alt="尼克·王尔德">
+            </div>
+            <div class="character-text">
+                <h1>尼克·王尔德</h1>
+                <p>街头聪明的赤狐，最初以诈骗为生，后成为朱迪的搭档。表面玩世不恭实则重情重义，擅长利用人们对狐狸的刻板印象。</p>
+                <div class="character-info">
+                    <ul>
+                        <li><strong>物种</strong>: 赤狐</li>
+                        <li><strong>招牌把戏</strong>: "大先生"冰棒骗局</li>
+                        <li><strong>特点</strong>: 幽默机智、精通城市规则、害怕哺乳动物收容所</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        
+        <!-- 狮市长 -->
+        <li class="character">
+            <div class="character-img">
+                <img src="../image/daaf5febbea28ee3d97428859dfb36c5_r.jpg"  alt="狮市长">
+            </div>
+            <div class="character-text">
+                <h1>狮明德市长</h1>
+                <p>动物城的魅力领袖，致力于打造跨物种和谐共处的都市。因隐藏掠食者发狂事件被迫下台，展现了政治人物的复杂性。</p>
+                <div class="character-info">
+                    <ul>
+                        <li><strong>物种</strong>: 非洲狮</li>
+                        <li><strong>执政理念</strong>: "团结之城，和谐之都"</li>
+                        <li><strong>特点</strong>: 威严气场、标志性鬃毛造型、善于公众演讲</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        
+        <!-- 羊市长 -->
+        <li class="character">
+            <div class="character-img">
+                <img src="../image/OIP-C.webp"  alt="羊市长">
+            </div>
+            <div class="character-text">
+                <h1>贝尔韦瑟·羊副市长</h1>
+                <p>表面温顺谦恭的副市长，实际策划了全城掠食者危机的幕后黑手。代表了被忽视群体的极端反抗方式。</p>
+                <div class="character-info">
+                    <ul>
+                        <li><strong>物种</strong>: 绵羊</li>
+                        <li><strong>阴谋武器</strong>: "午夜嚎叫"毒剂</li>
+                        <li><strong>特点</strong>: 伪装温顺、精通政治操纵、利用弱者身份实施阴谋</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        
+        <!-- 大先生 -->
+        <li class="character">
+            <div class="character-img">
+                <img src="../image/77094b36acaf2edda3ccea34454416e93901203f35eb.webp"  alt="大先生">
+            </div>
+            <div class="character-text">
+                <h1>大先生</h1>
+                <p>北极鼩鼱黑帮教父，掌控着动物城地下世界。虽体型微小却气场强大，对家庭极度重视，恩怨分明。</p>
+                <div class="character-info">
+                    <ul>
+                        <li><strong>物种</strong>: 北极鼩鼱</li>
+                        <li><strong>势力范围</strong>: 雨林区</li>
+                        <li><strong>特点</strong>: 坐在微型王座、雪茄不离手、女儿奴属性</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        
+        <!-- 闪电 -->
+        <li class="character">
+            <div class="character-img">
+                <img src="../image/800.jpg"  alt="闪电">
+            </div>
+            <div class="character-text">
+                <h1>闪电</h1>
+                <p>动物车管所的树懒公务员，以极度缓慢的行动和说话速度闻名。下班后却能展现惊人飙车技术，制造强烈反差笑点。</p>
+                <div class="character-info">
+                    <ul>
+                        <li><strong>物种</strong>: 三趾树懒</li>
+                        <li><strong>工作地点</strong>: 动物城车管所</li>
+                        <li><strong>特点</strong>: 极致慢动作、魔性笑声、下班后判若两人</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+    
+</body>
+</html>
