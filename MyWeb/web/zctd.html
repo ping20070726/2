@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主创团队</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI';
+        }
+        body {
+            background: linear-gradient(135deg, #3a4a6d 0%, #1c2a48 );
+            color: #f0f0f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+		.navbar { 
+            background-color: rgba(34, 34, 34, 0.9); /* 半透明深灰背景 */ 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+            position: sticky;
+            top: 0; 
+            z-index: 100; /* 确保导航栏在最上层 */ 
+        } 
+	.navbar-container { 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        } 
+       .navbar ul { 
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* 导航项之间的间距 */ 
+        } 
+        .navbar li a { 
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease; /* 动画过渡 */ 
+        } 
+        .navbar li a:hover { 
+            background-color: #007bff; /*  hover时变蓝 */ 
+            transform: translateY(-2px); /* 轻微上移，增加层次感 */ 
+        } 
+        .navbar li a.active  { 
+            background-color: #007bff; /* 当前页面的导航项高亮 */ 
+        } 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            border-bottom: 2px solid #ff9f1c;
+        }
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #ff9f1c, #ff4d6d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a4b1cd;
+            margin-top: 10px;
+        }
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .member-card {
+            display: flex;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 900px;
+            transition: transform 0.3s ease;
+        }
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        .img-container {
+            width: 40%;
+            position: relative;
+            overflow: hidden;
+        }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .member-card:hover .img-container img {
+            transform: scale(1.05);
+        }
+        .info-container {
+            width: 60%;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        .name {
+            font-size: 2.2rem;
+            color: #ffd166;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .role {
+            font-size: 1.1rem;
+            background: #ff9f1c;
+            color: #1c2a48;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .bio {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #d0d9eb;
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+        /* 自定义滚动条 */
+        .bio::-webkit-scrollbar {
+            width: 8px;
+        }
+        .bio::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+        }
+        .bio::-webkit-scrollbar-thumb {
+            background: #ff9f1c;
+            border-radius: 4px;
+        }
+        .highlight {
+            color: #ff9f1c;
+            font-weight: 600;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .member-card {
+                flex-direction: column;
+            }
+            .img-container, .info-container {
+                width: 100%;
+            }
+            .img-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+	<nav class="navbar"> 
+        <div class="navbar-container"> 
+            <ul>
+                <li><a href="../index.html"> 首页</a></li>
+                <li><a href="qjgk.html">情节概况</a></li>
+                <li><a href="jsjs.html"> 角色介绍</a></li>
+                <li><a href="zctd.html" class="active"> 主创团队</a></li>
+                <li><a href="ztjx.html"> 主题解析</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+         <div class="team-container">
+            <!-- 成员1 -->
+            <div class="member-card">
+                <div class="img-container">
+                    <img src="../image/80cb39dbb6fd5266f290ba4bac18972bd4073631.webp"  alt="拜伦·霍华德">
+                </div>
+                <div class="info-container">
+                    <h2 class="name">拜伦·霍华德</h2>
+                    <div class="role">导演</div>
+                    <div class="bio">
+                        <p>迪士尼资深动画导演，曾执导《魔发奇缘》《闪电狗》等经典作品。在《疯狂动物城》中，他创新性地构建了哺乳动物共存的世界观。布什从第一部起就深度参与剧本构建，提出了“偏见是座大山”的核心主题，将社会议题巧妙融入合家欢动画中</p>
+                        <p class="highlight">创作理念：</p>
+                        <p>"我们想探讨偏见与包容，通过动物寓言反映人类社会。每个角色都经过生物学研究，确保其特性符合真实动物行为。"</p>
+                        <p>"朱迪的故事告诉我们：体型大小不能决定你的成就上限，打破成见才能创造无限可能。"</p>
+						<p>他认为动物城是一个可以持续讲述故事的完整世界，希望观众能以幽默安全的方式面对现实问题</p>
+						
+                        <p>他带领团队耗时五年研发动物毛发渲染技术，创造了影史上最复杂的动画场景之一。影片获得第89届奥斯卡最佳动画长片奖。</p>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- 成员2 -->
+            <div class="member-card">
+                <div class="img-container">
+                    <img src="../image/0b7b02087bf40ad14f011ce35e2c11dfa8eccecd.webp"  alt="瑞奇·摩尔">
+                </div>
+                <div class="info-container">
+                    <h2 class="name">瑞奇·摩尔</h2>
+                    <div class="role">联合导演</div>
+                    <div class="bio">
+                        <p>动画界传奇人物，曾凭《无敌破坏王》获奥斯卡提名。在《疯狂动物城》中负责角色塑造和喜剧节奏把控。</p>
+                        <p class="highlight">角色设计哲学：</p>
+                        <p>"我们给每个动物设计了符合其物种特性的职业，比如行动缓慢的树懒当DMV员工，这种反差制造了绝妙的喜剧效果。"</p>
+                        <p>摩尔特别注重角色互动中的社会隐喻，将狐狸尼克的狡黠与兔子的天真转化为探讨偏见的叙事工具。</p>
+                        <p class=>"闪电车管局的场景原本只有15秒，但树懒的表演如此精彩，我们扩展成了经典片段。"</p>
+						<p>他与布什早在14年前就开始构思动物城的世界观蓝图，设想一个涵盖多种生态区、适合所有动物生存的城市</p>
+                        <p>他主导设计的"动物城"地铁系统，融合了不同动物区的建筑风格，成为动画设计的教科书案例。</p>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- 成员3 -->
+            <div class="member-card">
+                <div class="img-container">
+                    <img src="../image/6609c93d70cf3bc7b30d73dad800baa1cd112af2.webp"  alt="杰拉德·布什">
+                </div>
+                <div class="info-container">
+                    <h2 class="name">杰拉德·布什</h2>
+                    <div class="role">编剧 / 联合导演</div>
+                    <div class="bio">
+                        <p>故事架构大师，曾参与《森林战士》剧本创作。在《疯狂动物城》中构建了完整的动物社会体系。</p>
+                        <p class="highlight">世界观构建：</p>
+                        <p>他带领生物学顾问团队，为54种动物设计了符合生态特征的社会角色。从极地动物的"冰川镇"到沙漠动物的"撒哈拉广场"，每个区域都有独特的生态系统。</p>
+                        <p>剧本历经18次重大修改，最初版本中尼克才是主角，后调整为双主角结构。布什表示："朱迪打破偏见的旅程更能引起共鸣。"</p>
+                        <p>"最复杂的场景是警察局，我们要让不同体型的动物都能合理使用同一空间，为此设计了可调节的办公设备。"</p>
+                        <p>他创造的"哺乳动物大都会"包含100多个独特场景，细节密度打破迪士尼动画纪录。</p>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- 成员4 -->
+            <div class="member-card">
+                <div class="img-container">
+                    <img src="../image/9c16fdfaaf51f3ded081adab98eef01f3b2979c9.webp"  alt="克拉克·斯宾塞">
+                </div>
+                <div class="info-container">
+                    <h2 class="name">克拉克·斯宾塞</h2>
+                    <div class="role">制片人</div>
+                    <div class="bio">
+                        <p>迪士尼金牌制片人，参与作品包括《无敌破坏王》《冰雪奇缘》。负责统筹《疯狂动物城》的全球制作资源。</p>
+                        <p class="highlight">技术突破：</p>
+                        <p>他协调500人团队开发了新的毛发渲染系统"iGroom"，可处理单帧千万毛发量。最复杂的角色是旅鼠，每只拥有约480万根毛发。</p>
+                        <p>为解决动物比例问题，团队开发了动态场景系统：同一个道具在不同动物区有不同尺寸版本。</p>
+                        <p>"最艰巨的任务是让观众相信食肉动物和猎物能和平共处，我们在视觉细节上投入了前所未见的精力。"</p>
+                        <p>他主导的全球营销策略使影片成为2016年全球票房冠军，中国票房突破15亿元，创迪士尼动画纪录。</p>
+                        <p>影片获得金球奖、安妮奖等37项大奖，被《时代周刊》评为年度十大佳片。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+       
+    </div>
+</body>
+</html>
